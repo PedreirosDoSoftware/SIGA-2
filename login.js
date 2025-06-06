@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
-    const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.getElementById('senha');
     const rememberCheckbox = document.getElementById('remember');
-
-    loadSavedCredentials();
-
-    togglePassword.addEventListener('click', function() {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        this.classList.toggle('fa-eye-slash');
-    });
 
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -34,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             simulateLogin({
                 email: email.value,
                 senha: senha.value,
-                remember: rememberCheckbox.checked
+                remember: rememberCheckbox ? rememberCheckbox.checked : false
             });
         }
     });
@@ -49,14 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
         formGroup.classList.add('error');
 
         const errorMessage = formGroup.querySelector('.error-message');
-        errorMessage.textContent = message;
-        errorMessage.style.display = 'block';
+        if (errorMessage) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
     }
 
     function clearErrors() {
         document.querySelectorAll('.form-group').forEach(group => {
             group.classList.remove('error');
-            group.querySelector('.error-message').style.display = 'none';
+            const errorMessage = group.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
         });
     }
 
@@ -66,32 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Autenticando...';
         submitBtn.disabled = true;
 
+        // Simulação de autenticação
         setTimeout(() => {
-            if (credentials.remember) {
-                localStorage.setItem('siga_remember_email', credentials.email);
-                localStorage.setItem('siga_remember_password', credentials.senha);
-            } else {
-                localStorage.removeItem('siga_remember_email');
-                localStorage.removeItem('siga_remember_password');
-            }
-
-            alert('Login realizado com sucesso!');
-            
+            // Redirecionamento corrigido
             window.location.href = 'tela-inicial.html';
-
+            
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1500);
-    }
-
-    function loadSavedCredentials() {
-        const savedEmail = localStorage.getItem('siga_remember_email');
-        const savedPassword = localStorage.getItem('siga_remember_password');
-
-        if (savedEmail && savedPassword) {
-            document.getElementById('email').value = savedEmail;
-            document.getElementById('senha').value = savedPassword;
-            document.getElementById('remember').checked = true;
-        }
+        }, 1000);
     }
 });

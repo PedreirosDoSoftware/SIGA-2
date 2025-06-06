@@ -116,6 +116,8 @@ body {
     margin-top: 2rem;
     color: var(--text-color);
     font-size: 0.95rem;
+    position: relative;
+    top: 13px;
 }
 
 .register-link a {
@@ -123,6 +125,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
+    
 }
 
 .register-link a:hover {
@@ -145,6 +148,11 @@ body {
     display: block;
 }
 
+#es{
+    font-size: 13px;
+position: relative;
+top: 77px;
+}
 @keyframes fadeInUp {
     from {
         opacity: 0;
