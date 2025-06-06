@@ -9,6 +9,7 @@
     --card-blue: #3498db;
     --card-green: #2ecc71;
     --card-orange: #e67e22;
+    --danger: #e74c3c;
 }
 
 * {
@@ -26,6 +27,8 @@ body {
     display: flex;
     min-height: 100vh;
 }
+
+/* Sidebar */
 .sidebar {
     width: 250px;
     background-color: var(--sidebar-bg);
@@ -96,8 +99,8 @@ body {
 }
 
 .logout-container {
-    margin-top: auto; 
-    padding-top: 1rem 0;
+    margin-top: auto;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -116,15 +119,13 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.logout-btn i {
-    font-size: 1.2rem;
-}
-
+/* Main Content */
 .content {
     flex: 1;
-    padding: 1.5rem;
-    margin-left: 250px; 
+    padding: 2rem;
+    margin-left: 250px;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -146,6 +147,7 @@ body {
     color: var(--primary-color);
 }
 
+
 .user-profile {
     display: flex;
     align-items: center;
@@ -159,6 +161,8 @@ body {
     color: var(--primary-color);
 }
 
+
+/* Cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -216,6 +220,7 @@ body {
     color: var(--secondary-color);
 }
 
+/* Tabela de Alunos */
 .recent-students {
     background-color: var(--white);
     border-radius: 8px;
@@ -225,7 +230,7 @@ body {
 
 .recent-students h3 {
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -237,7 +242,7 @@ table {
 }
 
 table th, table td {
-    padding: 0.75rem;
+    padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
 }
@@ -245,13 +250,24 @@ table th, table td {
 table th {
     color: var(--text-color);
     font-weight: 600;
+    background-color: #f8f9fa;
 }
 
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* Status */
 .status {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 600;
+    display: inline-block;
 }
 
 .status.active {
@@ -261,5 +277,69 @@ table th {
 
 .status.inactive {
     background-color: rgba(231, 76, 60, 0.2);
-    color: #e74c3c;
+    color: var(--danger);
+}
+
+/* Botões de Ação */
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 5px;
+    transition: color 0.3s;
+    padding: 0.5rem;
+}
+
+.action-btn:hover {
+    color: var(--primary-color);
+}
+
+.action-btn.delete:hover {
+    color: var(--danger);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px;
+        padding: 1rem;
+    }
+    
+    .content {
+        margin-left: 220px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        overflow: hidden;
+    }
+    
+    .sidebar .logo h1,
+    .sidebar nav ul li a span,
+    .logout-btn span {
+        display: none;
+    }
+    
+    .sidebar nav ul li a,
+    .logout-btn {
+        justify-content: center;
+    }
+    
+    .content {
+        margin-left: 70px;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
