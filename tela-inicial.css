@@ -85,7 +85,7 @@ body {
 }
 
 .sidebar nav ul li.active a {
-    background-color: var(--primary-color);
+    
     font-weight: 600;
 }
 
