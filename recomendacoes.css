@@ -1,0 +1,83 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      margin-bottom: 40px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #00509e;
+    }
+
+    .lista-recomendacoes ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .lista-recomendacoes li {
+      background-color: #f0f4fa;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border-left: 5px solid #003366;
+    }
+
+    .lista-recomendacoes a {
+      text-decoration: none;
+      color: #003366;
+    }
+
+    .lista-recomendacoes a:hover {
+      text-decoration: underline;
+    }
