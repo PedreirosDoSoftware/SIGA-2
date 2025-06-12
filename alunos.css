@@ -23,7 +23,7 @@ body {
     background-color: var(--background);
 }
 
-.dashboard {
+.principal {
     display: flex;
     min-height: 100vh;
 }

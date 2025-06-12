@@ -22,7 +22,7 @@ body {
     background-color: var(--background);
 }
 
-.dashboard {
+.principal {
     display: flex;
     min-height: 100vh;
 }
@@ -254,12 +254,10 @@ table th {
     font-weight: 600;
 }
 
-.status.active {
-    background-color: rgba(46, 204, 113, 0.2);
-    color: var(--card-green);
+.status.alert {
+    color: #e67e22;
 }
 
-.status.inactive {
-    background-color: rgba(231, 76, 60, 0.2);
-    color: #e74c3c;
+.status i {
+    margin-right: 4px;
 }

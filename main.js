@@ -4,9 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('total-pendencias').textContent = '5';
 
     const alunos = [
-        { nome: 'João Silva', turma: 'Turma A', status: 'active' },
-        { nome: 'Maria Souza', turma: 'Turma B', status: 'active' },
-        { nome: 'Carlos Oliveira', turma: 'Turma C', status: 'inactive' }
+        { nome: 'João Silva', turma: 'Turma A', status: 'alert' },
+        { nome: 'Maria Souza', turma: 'Turma B', status: 'alert' },
+        { nome: 'Carlos Oliveira', turma: 'Turma C', status: 'alert' },
+        { nome: 'Ana Santos', turma: 'Turma A', status: 'alert' },
+        { nome: 'Pedro Costa', turma: 'Turma B', status: 'alert' },
+        { nome: 'Luiza Pereira', turma: 'Turma D', status: 'alert' },
+        { nome: 'Marcos Rocha', turma: 'Turma C', status: 'alert' },
+        { nome: 'Fernanda Lima', turma: 'Turma E', status: 'alert' },
+        { nome: 'Ricardo Alves', turma: 'Turma B', status: 'alert' },
+        { nome: 'Juliana Castro', turma: 'Turma A', status: 'alert' }
     ];
 
     const tabela = document.querySelector('#tabela-alunos tbody');
@@ -15,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         row.innerHTML = `
             <td>${aluno.nome}</td>
             <td>${aluno.turma}</td>
-            <td><span class="status ${aluno.status}">${aluno.status === 'active' ? 'Ativo' : 'Inativo'}</span></td>
+            <td><span class="status ${aluno.status}"><i class="fas fa-exclamation-triangle"></i> Alerta</span></td>
         `;
         tabela.appendChild(row);
     });
