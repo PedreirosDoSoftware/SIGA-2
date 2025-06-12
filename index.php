@@ -18,11 +18,11 @@
         <h3>DE GESTÃO ACADÊMICA</h3>
         
         <div class="auth-options">
-            <a href="/login.html" class="auth-button login-button">
+            <a href="login.php" class="auth-button login-button">
                 <i class="fas fa-sign-in-alt"></i>
                 <span>Acessar Sistema</span>
             </a>
-            <a href="/cadastro.html" class="auth-button register-button">
+            <a href="cadastro.php" class="auth-button register-button">
                 <i class="fas fa-user-plus"></i>
                 <span>Criar Conta</span>
             </a>
