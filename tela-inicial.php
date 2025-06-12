@@ -23,10 +23,10 @@ $usuario = $_SESSION['usuario'];
             </div>
             <nav>
                 <ul>
-                    <li class="active"><a href="dashboard.php"><i class="fas fa-home"></i> Principal</a></li>
-                    <li><a href="alunos.php"><i class="fas fa-users"></i> Alunos</a></li>
-                    <li><a href="turmas.php"><i class="fas fa-book"></i> Turmas</a></li>
-                    <li><a href="recomendacoes.php"><i class="fas fa-lightbulb"></i> Recomendações</a></li>
+                    <li class="active"><a href="tela-inicial.php"><i class="fas fa-home"></i> Principal</a></li>
+                    <li><a href="alunos.html"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="turmas.html"><i class="fas fa-book"></i> Turmas</a></li>
+                    <li><a href="recomendacoes.html"><i class="fas fa-lightbulb"></i> Recomendações</a></li>
                 </ul>
             </nav>
 

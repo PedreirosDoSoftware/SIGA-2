@@ -49,9 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
             <div class="form-options">
-                <label class="remember-me">
-                    <input type="checkbox" name="lembrar"> Lembrar-me
-                </label>
+                
                 <a id="es" href="#" class="esqueci-minha-senha">Esqueci minha senha</a>
             </div>
             <button type="submit" class="btn-primary">
